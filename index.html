@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Nanda Sir Coaching Academy</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f4f8ff;
+    color: #222;
+}
+
+header {
+    background: linear-gradient(135deg, #005bea, #003b95);
+    color: white;
+    text-align: center;
+    padding: 35px 15px;
+}
+
+header h1 {
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+
+header p {
+    font-size: 16px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 15px;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+.card h2 {
+    color: #005bea;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+input {
+    width: 100%;
+    padding: 14px;
+    border: 2px solid #d5e3ff;
+    border-radius: 8px;
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+    background: #005bea;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #003b95;
+}
+
+#result {
+    display: none;
+    margin-top: 20px;
+    padding: 20px;
+    background: #f4f8ff;
+    border-radius: 10px;
+}
+
+.result-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+footer {
+    text-align: center;
+    background: #003b95;
+    color: white;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+.contact {
+    text-align: center;
+    line-height: 2;
+}
+
+@media(max-width:600px) {
+    header h1 {
+        font-size: 23px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>NANDA SIR COACHING ACADEMY</h1>
+    <p>📍 Dungura | 📚 English</p>
+    <p>📞 9583864750</p>
+</header>
+
+<div class="container">
+
+    <div class="card">
+        <h2>🎓 Student Result</h2>
+
+        <input type="text" id="rollNo" placeholder="Enter Your Roll Number">
+
+        <button onclick="showResult()">View Result</button>
+
+        <div id="result"></div>
+    </div>
+
+    <div class="card">
+        <h2>📢 Notice</h2>
+        <p style="text-align:center;">
+            Student results will be published here.
+        </p>
+    </div>
+
+    <div class="card">
+        <h2>📞 Contact Us</h2>
+
+        <div class="contact">
+            <p>🏫 Nanda Sir Coaching Academy</p>
+            <p>📍 Dungura</p>
+            <p>📚 English</p>
+            <p>📞 9583864750</p>
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    © 2026 Nanda Sir Coaching Academy
+</footer>
+
+<script>
+
+function showResult() {
+
+    let roll = document.getElementById("rollNo").value.trim();
+    let resultBox = document.getElementById("result");
+
+    /*
+    RESULT DATA WILL BE ADDED HERE LATER
+    */
+
+    let students = {
+
+        /*
+        Example:
+
+        "101": {
+            name: "Student Name",
+            english: 80,
+            total: 80,
+            percentage: "80%",
+            result: "PASS"
+        }
+
+        */
+
+    };
+
+    if (students[roll]) {
+
+        let s = students[roll];
+
+        resultBox.innerHTML = `
+            <h3 style="color:#005bea;text-align:center;margin-bottom:15px;">
+                Student Result
+            </h3>
+
+            <div class="result-row">
+                <b>Name</b>
+                <span>${s.name}</span>
+            </div>
+
+            <div class="result-row">
+                <b>Roll No.</b>
+                <span>${roll}</span>
+            </div>
+
+            <div class="result-row">
+                <b>English</b>
+                <span>${s.english}</span>
+            </div>
+
+            <div class="result-row">
+                <b>Total</b>
+                <span>${s.total}</span>
+            </div>
+
+            <div class="result-row">
+                <b>Percentage</b>
+                <span>${s.percentage}</span>
+            </div>
+
+            <div class="result-row">
+                <b>Result</b>
+                <span>${s.result}</span>
+            </div>
+        `;
+
+        resultBox.style.display = "block";
+
+    } else {
+
+        resultBox.innerHTML = `
+            <p style="text-align:center;color:#d00;">
+                ❌ Result not found. Please check your Roll Number.
+            </p>
+        `;
+
+        resultBox.style.display = "block";
+    }
+}
+
+</script>
+
+</body>
+</html>
