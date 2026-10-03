@@ -15,63 +15,75 @@
 }
 
 body {
-    background: #f4f8ff;
+    background: #f3f7ff;
     color: #222;
 }
 
+/* HEADER */
 header {
-    background: linear-gradient(135deg, #005bea, #003b95);
+    background: linear-gradient(135deg, #0066ff, #002d80);
     color: white;
     text-align: center;
-    padding: 35px 15px;
+    padding: 42px 15px;
 }
 
 header h1 {
-    font-size: 30px;
-    margin-bottom: 8px;
+    font-size: 32px;
+    margin-bottom: 10px;
 }
 
 header p {
+    margin: 5px;
     font-size: 16px;
 }
 
+/* CONTAINER */
 .container {
-    max-width: 900px;
+    max-width: 850px;
     margin: 30px auto;
     padding: 15px;
 }
 
+/* CARD */
 .card {
     background: white;
-    padding: 25px;
+    padding: 28px;
     margin-bottom: 25px;
-    border-radius: 15px;
+    border-radius: 18px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.08);
 }
 
 .card h2 {
     color: #005bea;
-    margin-bottom: 15px;
     text-align: center;
+    margin-bottom: 20px;
 }
 
+/* INPUT */
 input {
     width: 100%;
-    padding: 14px;
-    border: 2px solid #d5e3ff;
-    border-radius: 8px;
-    font-size: 16px;
-    margin-bottom: 12px;
+    padding: 15px;
+    border: 2px solid #d7e4ff;
+    border-radius: 10px;
+    font-size: 17px;
+    outline: none;
 }
 
+input:focus {
+    border-color: #005bea;
+}
+
+/* BUTTON */
 button {
     width: 100%;
-    padding: 14px;
+    margin-top: 12px;
+    padding: 15px;
     background: #005bea;
     color: white;
     border: none;
-    border-radius: 8px;
+    border-radius: 10px;
     font-size: 17px;
+    font-weight: bold;
     cursor: pointer;
 }
 
@@ -79,37 +91,81 @@ button:hover {
     background: #003b95;
 }
 
+/* RESULT */
 #result {
     display: none;
-    margin-top: 20px;
+    margin-top: 25px;
+    background: #f7faff;
     padding: 20px;
-    background: #f4f8ff;
-    border-radius: 10px;
+    border-radius: 12px;
 }
 
-.result-row {
+.student-name {
+    text-align: center;
+    color: #003b95;
+    font-size: 23px;
+    font-weight: bold;
+    margin-bottom: 18px;
+}
+
+.row {
     display: flex;
     justify-content: space-between;
-    padding: 10px 0;
+    padding: 13px 5px;
     border-bottom: 1px solid #ddd;
 }
 
-footer {
-    text-align: center;
-    background: #003b95;
-    color: white;
-    padding: 20px;
-    margin-top: 40px;
+.pass {
+    color: green;
+    font-weight: bold;
 }
 
+.fail {
+    color: red;
+    font-weight: bold;
+}
+
+.not-published {
+    text-align: center;
+    color: #e06b00;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* NOTICE */
+.notice {
+    text-align: center;
+    line-height: 1.8;
+}
+
+/* CONTACT */
 .contact {
     text-align: center;
     line-height: 2;
 }
 
-@media(max-width:600px) {
+/* FOOTER */
+footer {
+    background: #002d80;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+
     header h1 {
-        font-size: 23px;
+        font-size: 24px;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    .row {
+        font-size: 15px;
     }
 }
 </style>
@@ -117,128 +173,400 @@ footer {
 
 <body>
 
+<!-- HEADER -->
 <header>
+
     <h1>NANDA SIR COACHING ACADEMY</h1>
-    <p>📍 Dungura | 📚 English</p>
+
+    <p>📍 Dungura</p>
+
+    <p>📚 English</p>
+
     <p>📞 9583864750</p>
+
 </header>
+
 
 <div class="container">
 
-    <div class="card">
-        <h2>🎓 Student Result</h2>
 
-        <input type="text" id="rollNo" placeholder="Enter Your Roll Number">
+<!-- RESULT SEARCH -->
+<div class="card">
 
-        <button onclick="showResult()">View Result</button>
+    <h2>🎓 Student Result</h2>
 
-        <div id="result"></div>
-    </div>
+    <input
+        type="text"
+        id="rollNo"
+        placeholder="Enter Your Roll Number"
+        autocomplete="off"
+    >
 
-    <div class="card">
-        <h2>📢 Notice</h2>
-        <p style="text-align:center;">
+    <button onclick="showResult()">
+        🔍 View Result
+    </button>
+
+    <div id="result"></div>
+
+</div>
+
+
+<!-- NOTICE -->
+<div class="card">
+
+    <h2>📢 Notice</h2>
+
+    <div class="notice">
+
+        <p>
             Student results will be published here.
         </p>
-    </div>
 
-    <div class="card">
-        <h2>📞 Contact Us</h2>
+        <p>
+            Enter your Roll Number to check your result.
+        </p>
 
-        <div class="contact">
-            <p>🏫 Nanda Sir Coaching Academy</p>
-            <p>📍 Dungura</p>
-            <p>📚 English</p>
-            <p>📞 9583864750</p>
-        </div>
     </div>
 
 </div>
 
+
+<!-- CONTACT -->
+<div class="card">
+
+    <h2>📞 Contact Us</h2>
+
+    <div class="contact">
+
+        <p>🏫 Nanda Sir Coaching Academy</p>
+
+        <p>📍 Dungura</p>
+
+        <p>📚 English</p>
+
+        <p>📞 9583864750</p>
+
+    </div>
+
+</div>
+
+
+</div>
+
+
+<!-- FOOTER -->
 <footer>
+
     © 2026 Nanda Sir Coaching Academy
+
 </footer>
+
 
 <script>
 
+/* ==================================================
+   STUDENT DATA
+
+   ROLL NUMBER + NAME ALREADY ADDED.
+
+   MARKS ARE BLANK FOR NOW.
+
+   LATER ONLY MARKS WILL BE ADDED.
+================================================== */
+
+const students = {
+
+    "4750NS0001": {
+        name: "Anshuman Ghadal",
+        english: ""
+    },
+
+    "4750NS0002": {
+        name: "Anusaya Barik",
+        english: ""
+    },
+
+    "4750NS0003": {
+        name: "Archita Kar",
+        english: ""
+    },
+
+    "4750NS0004": {
+        name: "Arpita Pati",
+        english: ""
+    },
+
+    "4750NS0005": {
+        name: "Barsharani Behera",
+        english: ""
+    },
+
+    "4750NS0006": {
+        name: "Damayanti Sahoo",
+        english: ""
+    },
+
+    "4750NS0007": {
+        name: "Deepa Ghosh",
+        english: ""
+    },
+
+    "4750NS0008": {
+        name: "Gayatri Behera",
+        english: ""
+    },
+
+    "4750NS0009": {
+        name: "Harapriya Mohanty",
+        english: ""
+    },
+
+    "4750NS0010": {
+        name: "Himanshu Parida",
+        english: ""
+    },
+
+    "4750NS0011": {
+        name: "Jyostna Rani Behera",
+        english: ""
+    },
+
+    "4750NS0012": {
+        name: "Kshirod Barik",
+        english: ""
+    },
+
+    "4750NS0013": {
+        name: "Leeja Sethi",
+        english: ""
+    },
+
+    "4750NS0014": {
+        name: "Lisa Rani Kundu",
+        english: ""
+    },
+
+    "4750NS0015": {
+        name: "Lipsa Rani Behera",
+        english: ""
+    },
+
+    "4750NS0016": {
+        name: "Madhusmita Lenka",
+        english: ""
+    },
+
+    "4750NS0017": {
+        name: "Manish Chakrabarty",
+        english: ""
+    },
+
+    "4750NS0018": {
+        name: "Omm Prakash Samal",
+        english: ""
+    },
+
+    "4750NS0019": {
+        name: "Pratiksha Jena",
+        english: ""
+    },
+
+    "4750NS0020": {
+        name: "Rajalaxmi Jena",
+        english: ""
+    },
+
+    "4750NS0021": {
+        name: "Rajanandini Sahoo",
+        english: ""
+    },
+
+    "4750NS0022": {
+        name: "Saimika Nayak",
+        english: ""
+    },
+
+    "4750NS0023": {
+        name: "Sairaj Samal",
+        english: ""
+    },
+
+    "4750NS0024": {
+        name: "Subham Mohanty",
+        english: ""
+    },
+
+    "4750NS0025": {
+        name: "Subhashree Dutta",
+        english: ""
+    },
+
+    "4750NS0026": {
+        name: "Sujata Pradhan",
+        english: ""
+    },
+
+    "4750NS0027": {
+        name: "Tapaswini Pradhan",
+        english: ""
+    },
+
+    "4750NS0028": {
+        name: "Uma Sankar Panda",
+        english: ""
+    }
+
+};
+
+
+/* ==================================================
+   SHOW RESULT
+================================================== */
+
 function showResult() {
 
-    let roll = document.getElementById("rollNo").value.trim();
-    let resultBox = document.getElementById("result");
+    let roll = document
+        .getElementById("rollNo")
+        .value
+        .trim()
+        .toUpperCase();
 
-    /*
-    RESULT DATA WILL BE ADDED HERE LATER
-    */
+    let resultBox =
+        document.getElementById("result");
 
-    let students = {
 
-        /*
-        Example:
+    /* EMPTY ROLL NUMBER */
 
-        "101": {
-            name: "Student Name",
-            english: 80,
-            total: 80,
-            percentage: "80%",
-            result: "PASS"
-        }
-
-        */
-
-    };
-
-    if (students[roll]) {
-
-        let s = students[roll];
+    if (roll === "") {
 
         resultBox.innerHTML = `
-            <h3 style="color:#005bea;text-align:center;margin-bottom:15px;">
-                Student Result
-            </h3>
-
-            <div class="result-row">
-                <b>Name</b>
-                <span>${s.name}</span>
-            </div>
-
-            <div class="result-row">
-                <b>Roll No.</b>
-                <span>${roll}</span>
-            </div>
-
-            <div class="result-row">
-                <b>English</b>
-                <span>${s.english}</span>
-            </div>
-
-            <div class="result-row">
-                <b>Total</b>
-                <span>${s.total}</span>
-            </div>
-
-            <div class="result-row">
-                <b>Percentage</b>
-                <span>${s.percentage}</span>
-            </div>
-
-            <div class="result-row">
-                <b>Result</b>
-                <span>${s.result}</span>
-            </div>
-        `;
-
-        resultBox.style.display = "block";
-
-    } else {
-
-        resultBox.innerHTML = `
-            <p style="text-align:center;color:#d00;">
-                ❌ Result not found. Please check your Roll Number.
+            <p style="text-align:center;color:red;font-weight:bold;">
+                ⚠️ Please enter your Roll Number.
             </p>
         `;
 
         resultBox.style.display = "block";
+
+        return;
     }
+
+
+    /* STUDENT FOUND */
+
+    if (students[roll]) {
+
+        let student = students[roll];
+
+
+        /* RESULT NOT PUBLISHED YET */
+
+        if (student.english === "") {
+
+            resultBox.innerHTML = `
+
+                <div class="student-name">
+                    ${student.name}
+                </div>
+
+                <div class="row">
+                    <b>Roll No.</b>
+                    <span>${roll}</span>
+                </div>
+
+                <div style="margin-top:20px;">
+                    <p class="not-published">
+                        📢 Result Not Published Yet
+                    </p>
+
+                    <p style="text-align:center;margin-top:8px;">
+                        Please check again after the result is published.
+                    </p>
+                </div>
+
+            `;
+
+        }
+
+
+        /* RESULT AVAILABLE */
+
+        else {
+
+            let marks = Number(student.english);
+
+            let total = marks;
+
+            let percentage = marks;
+
+            let resultStatus =
+                marks >= 33 ? "PASS" : "FAIL";
+
+
+            let resultClass =
+                marks >= 33 ? "pass" : "fail";
+
+
+            resultBox.innerHTML = `
+
+                <div class="student-name">
+                    ${student.name}
+                </div>
+
+                <div class="row">
+                    <b>Roll No.</b>
+                    <span>${roll}</span>
+                </div>
+
+                <div class="row">
+                    <b>English</b>
+                    <span>${marks}</span>
+                </div>
+
+                <div class="row">
+                    <b>Total</b>
+                    <span>${total}</span>
+                </div>
+
+                <div class="row">
+                    <b>Percentage</b>
+                    <span>${percentage}%</span>
+                </div>
+
+                <div class="row">
+                    <b>Result</b>
+                    <span class="${resultClass}">
+                        ${resultStatus}
+                    </span>
+                </div>
+
+            `;
+
+        }
+
+    }
+
+
+    /* STUDENT NOT FOUND */
+
+    else {
+
+        resultBox.innerHTML = `
+
+            <p style="text-align:center;color:#d00000;font-weight:bold;">
+                ❌ Roll Number Not Found
+            </p>
+
+            <p style="text-align:center;margin-top:8px;">
+                Please check your Roll Number and try again.
+            </p>
+
+        `;
+
+    }
+
+
+    resultBox.style.display = "block";
+
 }
 
 </script>
