@@ -4,26 +4,26 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Nanda Sir Coaching Academy | Result</title>
+<title>Nanda Sir Coaching Academy - Result</title>
 
 <style>
 *{
     box-sizing:border-box;
     margin:0;
     padding:0;
+    font-family:Arial, sans-serif;
 }
 
 body{
-    font-family:Arial,sans-serif;
-    background:#f3f7fc;
-    color:#172033;
+    background:#f1f6ff;
+    color:#222;
 }
 
 .header{
-    background:linear-gradient(135deg,#0756c9,#123b91);
+    background:linear-gradient(135deg,#0756c9,#0d8bf2);
     color:white;
     text-align:center;
-    padding:30px 15px;
+    padding:25px 15px;
 }
 
 .logo{
@@ -33,103 +33,88 @@ body{
     background:white;
     border-radius:50%;
     padding:5px;
-    margin-bottom:12px;
+    margin-bottom:10px;
 }
 
 .header h1{
     font-size:27px;
-    margin-bottom:7px;
+    margin-bottom:6px;
 }
 
 .header p{
-    margin:4px;
+    font-size:15px;
+    margin:4px 0;
 }
 
 .container{
-    width:92%;
-    max-width:900px;
+    max-width:700px;
     margin:25px auto;
+    padding:0 15px;
 }
 
 .card{
     background:white;
-    padding:25px;
+    border-radius:15px;
+    padding:22px;
     margin-bottom:20px;
-    border-radius:18px;
-    box-shadow:0 8px 25px rgba(0,0,0,.08);
+    box-shadow:0 5px 20px rgba(0,0,0,0.08);
 }
 
-.search{
-    text-align:center;
-}
-
-.search h2{
+.card h2{
     color:#0756c9;
-    margin-bottom:8px;
+    text-align:center;
+    margin-bottom:18px;
 }
 
-.search p{
-    color:#666;
-    margin-bottom:20px;
+.search-box{
+    display:flex;
+    gap:10px;
 }
 
-input{
-    width:100%;
-    max-width:500px;
-    padding:14px;
-    border:2px solid #dbe3ef;
-    border-radius:10px;
+.search-box input{
+    flex:1;
+    padding:13px;
+    border:2px solid #d5e3f7;
+    border-radius:8px;
     font-size:16px;
     outline:none;
 }
 
-input:focus{
+.search-box input:focus{
     border-color:#0756c9;
 }
 
 button{
-    margin-top:12px;
-    padding:13px 25px;
-    border:0;
-    border-radius:10px;
     background:#0756c9;
     color:white;
+    border:none;
+    padding:13px 20px;
+    border-radius:8px;
     font-size:16px;
-    font-weight:bold;
     cursor:pointer;
 }
 
 button:hover{
-    background:#06439b;
+    background:#0646a5;
 }
 
 .result{
     display:none;
-    margin-top:22px;
-    padding:20px;
-    background:#f7faff;
-    border:1px solid #dce9ff;
-    border-radius:14px;
-    text-align:left;
-}
-
-.result h3{
-    color:#0756c9;
-    margin-bottom:15px;
 }
 
 .student-info{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:10px;
-    margin:15px 0;
+    text-align:center;
+    margin-bottom:20px;
 }
 
-.info-box{
-    background:white;
-    padding:12px;
-    border-radius:8px;
-    border:1px solid #e3e8f0;
+.student-info h3{
+    font-size:23px;
+    color:#0756c9;
+}
+
+.roll{
+    color:#666;
+    margin-top:5px;
 }
 
 table{
@@ -139,8 +124,8 @@ table{
 }
 
 th,td{
-    padding:12px 8px;
-    border:1px solid #dce3ed;
+    border:1px solid #d9e3f0;
+    padding:12px;
     text-align:center;
 }
 
@@ -154,446 +139,537 @@ th{
     background:#eef5ff;
 }
 
-.summary{
-    margin-top:18px;
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:10px;
-}
-
-.summary-box{
-    padding:14px;
+.grade-box{
     text-align:center;
-    background:white;
-    border:1px solid #dce3ed;
-    border-radius:10px;
+    margin-top:20px;
 }
 
-.summary-box strong{
-    display:block;
+.grade{
+    display:inline-block;
+    background:#0756c9;
+    color:white;
+    padding:10px 25px;
+    border-radius:8px;
     font-size:20px;
-    color:#0756c9;
-    margin-top:5px;
-}
-
-.absent-box{
-    text-align:center;
-    padding:25px 10px;
-    background:#fff4f4;
-    border:1px solid #ffd0d0;
-    border-radius:12px;
-}
-
-.absent-box h2{
-    color:#d62828;
-    margin-bottom:8px;
-}
-
-.notice h2,
-.contact h2{
-    color:#0756c9;
-    margin-bottom:10px;
-}
-
-.notice p,
-.contact p{
-    margin:8px 0;
-}
-
-.contact a{
-    color:#0756c9;
     font-weight:bold;
-    text-decoration:none;
+}
+
+.pass{
+    color:green;
+    font-size:20px;
+    font-weight:bold;
+    margin-top:10px;
+}
+
+.fail{
+    color:red;
+    font-size:20px;
+    font-weight:bold;
+    margin-top:10px;
+}
+
+.message{
+    text-align:center;
+    padding:20px;
+    color:#555;
+    font-size:17px;
+}
+
+.notice{
+    background:#fff8df;
+    border-left:5px solid #ffb300;
+}
+
+.contact{
+    text-align:center;
+}
+
+.contact strong{
+    color:#0756c9;
 }
 
 .footer{
-    background:#101827;
+    background:#0756c9;
     color:white;
     text-align:center;
-    padding:22px 10px;
+    padding:18px;
+    margin-top:30px;
 }
 
-.small{
-    font-size:13px;
-    opacity:.7;
-    margin-top:7px;
+.print-btn{
+    margin-top:18px;
+    background:#198754;
+}
+
+.print-btn:hover{
+    background:#146c43;
 }
 
 @media(max-width:600px){
-
     .header h1{
         font-size:22px;
     }
 
-    .student-info{
-        grid-template-columns:1fr;
+    .search-box{
+        flex-direction:column;
     }
 
-    .summary{
-        grid-template-columns:1fr;
+    button{
+        width:100%;
     }
 
     th,td{
-        font-size:13px;
-        padding:9px 4px;
-    }
-
-    .card{
-        padding:20px;
+        padding:9px 5px;
+        font-size:14px;
     }
 }
 
 @media print{
-
-    body *{
-        visibility:hidden;
+    body{
+        background:white;
     }
 
-    .result,
-    .result *{
-        visibility:visible;
+    .header,
+    .search-card,
+    .notice,
+    .contact,
+    .footer,
+    .print-btn{
+        display:none !important;
     }
 
     .result{
-        position:absolute;
-        left:0;
-        top:0;
-        width:100%;
+        display:block !important;
         box-shadow:none;
+    }
+
+    .container{
+        max-width:100%;
     }
 }
 </style>
 </head>
 
-
 <body>
 
-<header class="header">
+<!-- HEADER -->
+<div class="header">
 
-<img src="logo.png"
-     class="logo"
-     alt="Nanda Sir Coaching Academy Logo">
+    <img src="logo.png"
+         class="logo"
+         alt="Nanda Sir Coaching Academy Logo">
 
-<h1>NANDA SIR COACHING ACADEMY</h1>
+    <h1>Nanda Sir Coaching Academy</h1>
 
-<p>📍 Dungura</p>
-<p>📚 English</p>
-<p>📞 9583864750</p>
+    <p>📍 Dungura</p>
+    <p>📚 Subject: English</p>
+    <p>📞 9583864750</p>
 
-</header>
-
-
-<main class="container">
-
-<section class="card search">
-
-<h2>🎓 Check Your Result</h2>
-
-<p>Enter your Roll Number to view your examination result.</p>
-
-<input
-    type="text"
-    id="rollInput"
-    placeholder="Enter Roll Number"
-    autocomplete="off"
->
-
-<br>
-
-<button onclick="checkResult()">View Result</button>
-
-<div id="resultBox" class="result"></div>
-
-</section>
+</div>
 
 
-<section class="card notice">
+<div class="container">
 
-<h2>📢 Notice</h2>
+    <!-- SEARCH -->
+    <div class="card search-card">
 
-<p>
-Welcome to Nanda Sir Coaching Academy.
-Students can check their examination result using their Roll Number.
-</p>
+        <h2>🎓 Student Result</h2>
 
-<p>
-Result will be published by the Academy.
-</p>
+        <div class="search-box">
 
-</section>
+            <input
+                type="text"
+                id="rollInput"
+                placeholder="Enter Roll Number"
+                autocomplete="off"
+            >
 
+            <button onclick="checkResult()">
+                View Result
+            </button>
 
-<section class="card contact">
+        </div>
 
-<h2>📞 Contact Academy</h2>
-
-<p>
-<strong>Academy:</strong>
-Nanda Sir Coaching Academy
-</p>
-
-<p>
-<strong>Location:</strong>
-Dungura
-</p>
-
-<p>
-<strong>Phone:</strong>
-<a href="tel:9583864750">9583864750</a>
-</p>
-
-</section>
-
-</main>
+    </div>
 
 
-<footer class="footer">
+    <!-- RESULT -->
+    <div class="card result" id="resultBox">
 
-<p>© 2026 Nanda Sir Coaching Academy</p>
+        <div class="student-info">
 
-<p class="small">
-Official Student Result Portal
-</p>
+            <h3 id="studentName"></h3>
 
-</footer>
+            <p class="roll">
+                Roll No: <span id="studentRoll"></span>
+            </p>
+
+        </div>
+
+
+        <table>
+
+            <thead>
+
+                <tr>
+                    <th>Part</th>
+                    <th>Full Mark</th>
+                    <th>Mark Obtained</th>
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td>Objective</td>
+                    <td>50</td>
+                    <td id="objectiveMark"></td>
+                </tr>
+
+                <tr>
+                    <td>Subjective</td>
+                    <td>50</td>
+                    <td id="subjectiveMark"></td>
+                </tr>
+
+                <tr class="total-row">
+                    <td>Total</td>
+                    <td>100</td>
+                    <td id="totalMark"></td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+
+        <div class="grade-box">
+
+            <p>
+                <strong>Percentage:</strong>
+                <span id="percentage"></span>%
+            </p>
+
+            <br>
+
+            <p>
+                <strong>Grade:</strong>
+            </p>
+
+            <div class="grade" id="grade"></div>
+
+            <div id="status"></div>
+
+        </div>
+
+
+        <div style="text-align:center;">
+            <button class="print-btn" onclick="window.print()">
+                🖨️ Print Result
+            </button>
+        </div>
+
+    </div>
+
+
+    <!-- NOTICE -->
+    <div class="card notice">
+
+        <h2>📢 Notice</h2>
+
+        <p style="text-align:center;">
+            Please enter your correct Roll Number to view your result.
+        </p>
+
+    </div>
+
+
+    <!-- CONTACT -->
+    <div class="card contact">
+
+        <h2>📞 Contact</h2>
+
+        <p>
+            <strong>Nanda Sir Coaching Academy</strong>
+        </p>
+
+        <p>Dungura</p>
+
+        <p>English Coaching</p>
+
+        <p>Phone: <strong>9583864750</strong></p>
+
+    </div>
+
+</div>
+
+
+<!-- FOOTER -->
+<div class="footer">
+
+    <p>
+        © 2026 Nanda Sir Coaching Academy
+    </p>
+
+    <p>
+        All Rights Reserved
+    </p>
+
+</div>
 
 
 <script>
 
-/* =========================================
+/* =========================
    STUDENT DATA
-   =========================================
-
-   absent:false = student present
-
-   absent:true = student absent
-
-   objective/subjective blank = result not published
-
-   ========================================= */
+   Objective = 50
+   Subjective = 50
+   Total = 100
+   ========================= */
 
 const students = {
 
-"4750NS0001": {
-    name:"Anshuman Ghadal",
-    objective:34,
-    subjective:31,
-    absent:false
-},
+    "4750NS0001": {
+        name:"Anshuman Ghadai",
+        objective:34,
+        subjective:31,
+        absent:false
+    },
 
-"4750NS0002": {
-    name:"Anusaya Barik",
-    objective:"",
-    subjective:"",
-    absent:false
-},
+    "4750NS0002": {
+        name:"Anusaya Barik",
+        objective:21,
+        subjective:17,
+        absent:false
+    },
 
-"4750NS0003": {
-    name:"Archita Kar",
-    objective:"",
-    subjective:"",
-    absent:false
-},
+    "4750NS0003": {
+        name:"Archita Kar",
+        objective:45,
+        subjective:38,
+        absent:false
+    },
 
-"4750NS0004": {
-    name:"Arpita Pati",
-    objective:"",
-    subjective:"",
-    absent:false
-},
+    "4750NS0004": {
+        name:"Arpita Pati",
+        objective:"",
+        subjective:"",
+        absent:true
+    },
 
-"4750NS0005": {
-    name:"Barsharani Behera",
-    objective:"",
-    subjective:"",
-    absent:false
-},
+    "4750NS0005": {
+        name:"Barsharani Behera",
+        objective:18,
+        subjective:19,
+        absent:false
+    },
 
-"4750NS0006": {
-    name:"Damayanti Sahoo",
-    objective:"",
-    subjective:"",
-    absent:false
-},
+    "4750NS0006": {
+        name:"Damayanti Sahoo",
+        objective:42,
+        subjective:29,
+        absent:false
+    },
 
-"4750NS0007": {
-    name:"Deepa Ghosh",
-    objective:"",
-    subjective:"",
-    absent:false
-},
+    "4750NS0007": {
+        name:"Deepa Ghosh",
+        objective:42,
+        subjective:36,
+        absent:false
+    },
 
-"4750NS0008": {
-    name:"Gayatri Behera",
-    objective:"",
-    subjective:"",
-    absent:false
-},
+    "4750NS0008": {
+        name:"Gayatri Behera",
+        objective:29,
+        subjective:25,
+        absent:false
+    },
 
-"4750NS0009": {
-    name:"Harapriya Mohanty",
-    objective:"",
-    subjective:"",
-    absent:false
-},
+    "4750NS0009": {
+        name:"Harapriya Mohanty",
+        objective:36,
+        subjective:31,
+        absent:false
+    },
 
-"4750NS0010": {
-    name:"Himanshu Parida",
-    objective:"",
-    subjective:"",
-    absent:false
-},
+    "4750NS0010": {
+        name:"Himanshu Parida",
+        objective:25,
+        subjective:22,
+        absent:false
+    },
 
-"4750NS0011": {
-    name:"Jyostna Rani Behera",
-    objective:"",
-    subjective:"",
-    absent:false
-},
+    "4750NS0011": {
+        name:"Jyotsna Rani Behera",
+        objective:46,
+        subjective:34,
+        absent:false
+    },
 
-"4750NS0012": {
-    name:"Kshirod Barik",
-    objective:"",
-    subjective:"",
-    absent:false
-},
+    "4750NS0012": {
+        name:"Kshirod Barik",
+        objective:38,
+        subjective:32,
+        absent:false
+    },
 
-"4750NS0013": {
-    name:"Leeja Sethi",
-    objective:"",
-    subjective:"",
-    absent:false
-},
+    "4750NS0013": {
+        name:"Leeja Sethi",
+        objective:39,
+        subjective:38,
+        absent:false
+    },
 
-"4750NS0014": {
-    name:"Lisa Rani Kundu",
-    objective:"",
-    subjective:"",
-    absent:false
-},
+    "4750NS0014": {
+        name:"Lisa Rani Kundu",
+        objective:24,
+        subjective:17,
+        absent:false
+    },
 
-"4750NS0015": {
-    name:"Lipsa Rani Behera",
-    objective:"",
-    subjective:"",
-    absent:false
-},
+    "4750NS0015": {
+        name:"Lipsa Rani Behera",
+        objective:"",
+        subjective:"",
+        absent:true
+    },
 
-"4750NS0016": {
-    name:"Madhusmita Lenka",
-    objective:"",
-    subjective:"",
-    absent:false
-},
+    "4750NS0016": {
+        name:"Madhusmita Lenka",
+        objective:31,
+        subjective:20,
+        absent:false
+    },
 
-"4750NS0017": {
-    name:"Manish Chakrabarty",
-    objective:"",
-    subjective:"",
-    absent:false
-},
+    "4750NS0017": {
+        name:"Manish Chakrabarty",
+        objective:38,
+        subjective:27,
+        absent:false
+    },
 
-"4750NS0018": {
-    name:"Omm Prakash Samal",
-    objective:"",
-    subjective:"",
-    absent:false
-},
+    "4750NS0018": {
+        name:"Omm Prakash Samal",
+        objective:31,
+        subjective:24,
+        absent:false
+    },
 
-"4750NS0019": {
-    name:"Pratiksha Jena",
-    objective:"",
-    subjective:"",
-    absent:false
-},
+    "4750NS0019": {
+        name:"Pratiksha Jena",
+        objective:33,
+        subjective:32,
+        absent:false
+    },
 
-"4750NS0020": {
-    name:"Rajalaxmi Jena",
-    objective:"",
-    subjective:"",
-    absent:false
-},
+    "4750NS0020": {
+        name:"Rajalaxmi Jena",
+        objective:33,
+        subjective:41,
+        absent:false
+    },
 
-"4750NS0021": {
-    name:"Rajanandini Sahoo",
-    objective:"",
-    subjective:"",
-    absent:false
-},
+    "4750NS0021": {
+        name:"Rajanandini Sahoo",
+        objective:32,
+        subjective:34,
+        absent:false
+    },
 
-"4750NS0022": {
-    name:"Saimika Nayak",
-    objective:"",
-    subjective:"",
-    absent:false
-},
+    "4750NS0022": {
+        name:"Saimika Nayak",
+        objective:27,
+        subjective:23,
+        absent:false
+    },
 
-"4750NS0023": {
-    name:"Sairaj Samal",
-    objective:"",
-    subjective:"",
-    absent:false
-},
+    "4750NS0023": {
+        name:"Sairaj Samal",
+        objective:29,
+        subjective:18,
+        absent:false
+    },
 
-"4750NS0024": {
-    name:"Subham Mohanty",
-    objective:"",
-    subjective:"",
-    absent:false
-},
+    "4750NS0024": {
+        name:"Subham Mohanty",
+        objective:22,
+        subjective:12,
+        absent:false
+    },
 
-"4750NS0025": {
-    name:"Subhashree Dutta",
-    objective:"",
-    subjective:"",
-    absent:false
-},
+    "4750NS0025": {
+        name:"Subhashree Dutta",
+        objective:26,
+        subjective:16,
+        absent:false
+    },
 
-"4750NS0026": {
-    name:"Sujata Pradhan",
-    objective:"",
-    subjective:"",
-    absent:false
-},
+    "4750NS0026": {
+        name:"Sujata Pradhan",
+        objective:16,
+        subjective:17,
+        absent:false
+    },
 
-"4750NS0027": {
-    name:"Tapaswini Pradhan",
-    objective:"",
-    subjective:"",
-    absent:false
-},
+    "4750NS0027": {
+        name:"Tapaswini Pradhan",
+        objective:33,
+        subjective:32,
+        absent:false
+    },
 
-"4750NS0028": {
-    name:"Uma Sankar Panda",
-    objective:"",
-    subjective:"",
-    absent:false
-}
+    "4750NS0028": {
+        name:"Uma Sankar Panda",
+        objective:47,
+        subjective:43,
+        absent:false
+    }
 
 };
 
 
-/* =========================================
+/* =========================
    GRADE SYSTEM
-   ========================================= */
+   ========================= */
 
 function getGrade(percentage){
 
-    if(percentage >= 90) return "A1";
-    if(percentage >= 80) return "A2";
-    if(percentage >= 70) return "B1";
-    if(percentage >= 60) return "B2";
-    if(percentage >= 50) return "C1";
-    if(percentage >= 40) return "C2";
-    if(percentage >= 33) return "D";
+    if(percentage >= 90){
+        return "A1";
+    }
+
+    if(percentage >= 80){
+        return "A2";
+    }
+
+    if(percentage >= 70){
+        return "B1";
+    }
+
+    if(percentage >= 60){
+        return "B2";
+    }
+
+    if(percentage >= 50){
+        return "C1";
+    }
+
+    if(percentage >= 40){
+        return "C2";
+    }
+
+    if(percentage >= 33){
+        return "D";
+    }
 
     return "F";
 }
 
 
-/* =========================================
+/* =========================
    CHECK RESULT
-   ========================================= */
+   ========================= */
 
 function checkResult(){
 
@@ -603,77 +679,64 @@ function checkResult(){
         .trim()
         .toUpperCase();
 
-    const box =
+    const resultBox =
         document.getElementById("resultBox");
 
-    box.style.display="block";
 
+    if(roll === ""){
 
-    /* Empty Roll Number */
-
-    if(!roll){
-
-        box.innerHTML = `
-            <h3>⚠️ Please Enter Roll Number</h3>
-        `;
+        alert("Please enter Roll Number.");
 
         return;
     }
 
-
-    /* Find Student */
 
     const student = students[roll];
 
 
     if(!student){
 
-        box.innerHTML = `
-            <h3>❌ Roll Number Not Found</h3>
-            <p>Please check your Roll Number and try again.</p>
+        resultBox.style.display = "block";
+
+        resultBox.innerHTML = `
+            <div class="message">
+                ❌ Roll Number not found.
+            </div>
         `;
 
         return;
     }
 
 
-    /* =====================================
-       ABSENT STUDENT
-       ===================================== */
+    /* ABSENT */
 
     if(student.absent === true){
 
-        box.innerHTML = `
+        resultBox.style.display = "block";
 
-        <h3>🎓 Student Result</h3>
+        resultBox.innerHTML = `
 
-        <div class="student-info">
+            <div class="student-info">
 
-            <div class="info-box">
-                <strong>Name</strong><br>
-                ${student.name}
+                <h3>${student.name}</h3>
+
+                <p class="roll">
+                    Roll No: ${roll}
+                </p>
+
             </div>
 
-            <div class="info-box">
-                <strong>Roll Number</strong><br>
-                ${roll}
+            <div class="message">
+
+                <h2 style="color:red;">
+                    ABSENT
+                </h2>
+
+                <p>
+                    The student was absent in the examination.
+                </p>
+
             </div>
-
-        </div>
-
-        <div class="absent-box">
-
-            <h2>ABSENT</h2>
-
-            <p>
-            The student was absent in the examination.
-            </p>
-
-        </div>
-
-        <button onclick="window.print()">
-            🖨️ Print Result
-        </button>
 
         `;
 
@@ -681,34 +744,32 @@ function checkResult(){
     }
 
 
-    /* =====================================
-       RESULT NOT PUBLISHED
-       ===================================== */
+    /* RESULT NOT PUBLISHED */
 
-    if(student.objective === "" ||
-       student.subjective === ""){
+    if(
+        student.objective === "" ||
+        student.subjective === ""
+    ){
 
-        box.innerHTML = `
+        resultBox.style.display = "block";
 
-        <h3>🎓 Student Details</h3>
+        resultBox.innerHTML = `
 
-        <div class="student-info">
+            <div class="student-info">
 
-            <div class="info-box">
-                <strong>Name</strong><br>
-                ${student.name}
+                <h3>${student.name}</h3>
+
+                <p class="roll">
+                    Roll No: ${roll}
+                </p>
+
             </div>
 
-            <div class="info-box">
-                <strong>Roll Number</strong><br>
-                ${roll}
+            <div class="message">
+
+                ⏳ Result Not Published Yet
+
             </div>
-
-        </div>
-
-        <p>
-        📢 <strong>Result Not Published Yet</strong>
-        </p>
 
         `;
 
@@ -716,9 +777,7 @@ function checkResult(){
     }
 
 
-    /* =====================================
-       CALCULATE MARKS
-       ===================================== */
+    /* MARK CALCULATION */
 
     const objective =
         Number(student.objective);
@@ -726,163 +785,133 @@ function checkResult(){
     const subjective =
         Number(student.subjective);
 
+
     const total =
         objective + subjective;
+
 
     const percentage =
         total;
 
+
     const grade =
         getGrade(percentage);
 
-    const status =
-        total >= 33 ? "PASS" : "FAIL";
+
+    /* SHOW RESULT */
+
+    resultBox.style.display = "block";
 
 
-    /* =====================================
-       SHOW RESULT
-       ===================================== */
+    resultBox.innerHTML = `
 
-    box.innerHTML = `
+        <div class="student-info">
 
-    <h3>🎓 Examination Result</h3>
+            <h3>${student.name}</h3>
 
+            <p class="roll">
+                Roll No: ${roll}
+            </p>
 
-    <div class="student-info">
-
-        <div class="info-box">
-            <strong>Name</strong><br>
-            ${student.name}
         </div>
 
-        <div class="info-box">
-            <strong>Roll Number</strong><br>
-            ${roll}
-        </div>
 
-    </div>
+        <table>
 
+            <thead>
 
-    <table>
+                <tr>
+                    <th>Part</th>
+                    <th>Full Mark</th>
+                    <th>Mark Obtained</th>
+                </tr>
 
-        <thead>
+            </thead>
 
-            <tr>
+            <tbody>
 
-                <th>Subject</th>
+                <tr>
+                    <td>Objective</td>
+                    <td>50</td>
+                    <td>${objective}</td>
+                </tr>
 
-                <th>Objective</th>
+                <tr>
+                    <td>Subjective</td>
+                    <td>50</td>
+                    <td>${subjective}</td>
+                </tr>
 
-                <th>Subjective</th>
+                <tr class="total-row">
+                    <td>Total</td>
+                    <td>100</td>
+                    <td>${total}</td>
+                </tr>
 
-                <th>Total</th>
+            </tbody>
 
-                <th>Grade</th>
-
-            </tr>
-
-        </thead>
-
-
-        <tbody>
-
-            <tr>
-
-                <td>English</td>
-
-                <td>${objective}</td>
-
-                <td>${subjective}</td>
-
-                <td>${total}</td>
-
-                <td>${grade}</td>
-
-            </tr>
+        </table>
 
 
-            <tr class="total-row">
+        <div class="grade-box">
 
-                <td>Grand Total</td>
-
-                <td>${objective}</td>
-
-                <td>${subjective}</td>
-
-                <td>${total}/100</td>
-
-                <td>${grade}</td>
-
-            </tr>
-
-        </tbody>
-
-    </table>
-
-
-    <div class="summary">
-
-        <div class="summary-box">
-
-            Percentage
-
-            <strong>
+            <p>
+                <strong>Percentage:</strong>
                 ${percentage}%
-            </strong>
+            </p>
 
-        </div>
+            <br>
 
+            <p>
+                <strong>Grade:</strong>
+            </p>
 
-        <div class="summary-box">
-
-            Grade
-
-            <strong>
+            <div class="grade">
                 ${grade}
-            </strong>
+            </div>
+
+
+            <div class="${total >= 33 ? 'pass' : 'fail'}">
+
+                ${total >= 33 ? 'PASS' : 'FAIL'}
+
+            </div>
 
         </div>
 
 
-        <div class="summary-box">
+        <div style="text-align:center;">
 
-            Result
+            <button
+                class="print-btn"
+                onclick="window.print()">
 
-            <strong>
-                ${status}
-            </strong>
+                🖨️ Print Result
+
+            </button>
 
         </div>
-
-    </div>
-
-
-    <button onclick="window.print()">
-        🖨️ Print Result
-    </button>
 
     `;
+
 }
 
 
-/* =========================================
+/* =========================
    ENTER KEY
-   ========================================= */
+   ========================= */
 
 document
 .getElementById("rollInput")
-.addEventListener(
-    "keypress",
-    function(event){
+.addEventListener("keydown", function(event){
 
-        if(event.key === "Enter"){
+    if(event.key === "Enter"){
 
-            checkResult();
-
-        }
+        checkResult();
 
     }
-);
+
+});
 
 </script>
 
