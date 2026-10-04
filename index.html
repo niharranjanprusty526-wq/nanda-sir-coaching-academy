@@ -3,427 +3,886 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nanda Sir Coaching Academy | Dungura</title>
+
+<title>Nanda Sir Coaching Academy | Result</title>
 
 <style>
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    background: #f4f7fb;
-    color: #172033;
+body{
+    font-family:Arial,sans-serif;
+    background:#f3f7fc;
+    color:#172033;
 }
 
-.header {
-    background: linear-gradient(135deg, #0756c9, #123b91);
-    color: white;
-    padding: 30px 15px;
-    text-align: center;
+.header{
+    background:linear-gradient(135deg,#0756c9,#123b91);
+    color:white;
+    text-align:center;
+    padding:30px 15px;
 }
 
-.logo {
-    width: 90px;
-    height: 90px;
-    object-fit: contain;
-    background: white;
-    border-radius: 50%;
-    padding: 5px;
-    margin-bottom: 12px;
+.logo{
+    width:90px;
+    height:90px;
+    object-fit:contain;
+    background:white;
+    border-radius:50%;
+    padding:5px;
+    margin-bottom:12px;
 }
 
-.header h1 {
-    font-size: 28px;
-    margin-bottom: 7px;
+.header h1{
+    font-size:27px;
+    margin-bottom:7px;
 }
 
-.header p {
-    margin: 4px 0;
-    opacity: 0.95;
+.header p{
+    margin:4px;
 }
 
-.container {
-    width: 92%;
-    max-width: 900px;
-    margin: 25px auto;
+.container{
+    width:92%;
+    max-width:900px;
+    margin:25px auto;
 }
 
-.card {
-    background: white;
-    border-radius: 18px;
-    padding: 25px;
-    margin-bottom: 20px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+.card{
+    background:white;
+    padding:25px;
+    margin-bottom:20px;
+    border-radius:18px;
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
 }
 
-.search-card {
-    text-align: center;
+.search{
+    text-align:center;
 }
 
-.search-card h2 {
-    color: #0756c9;
-    margin-bottom: 8px;
+.search h2{
+    color:#0756c9;
+    margin-bottom:8px;
 }
 
-.search-card p {
-    color: #666;
-    margin-bottom: 20px;
+.search p{
+    color:#666;
+    margin-bottom:20px;
 }
 
-input {
-    width: 100%;
-    max-width: 500px;
-    padding: 14px;
-    border: 2px solid #dbe3ef;
-    border-radius: 10px;
-    font-size: 16px;
-    outline: none;
+input{
+    width:100%;
+    max-width:500px;
+    padding:14px;
+    border:2px solid #dbe3ef;
+    border-radius:10px;
+    font-size:16px;
+    outline:none;
 }
 
-input:focus {
-    border-color: #0756c9;
+input:focus{
+    border-color:#0756c9;
 }
 
-button {
-    margin-top: 12px;
-    padding: 13px 25px;
-    border: none;
-    border-radius: 10px;
-    background: #0756c9;
-    color: white;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
+button{
+    margin-top:12px;
+    padding:13px 25px;
+    border:0;
+    border-radius:10px;
+    background:#0756c9;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
 }
 
-button:hover {
-    background: #06439b;
+button:hover{
+    background:#06439b;
 }
 
-.result {
-    display: none;
-    margin-top: 22px;
-    padding: 20px;
-    border-radius: 14px;
-    background: #f5f9ff;
-    border: 1px solid #dce9ff;
-    text-align: left;
+.result{
+    display:none;
+    margin-top:22px;
+    padding:20px;
+    background:#f7faff;
+    border:1px solid #dce9ff;
+    border-radius:14px;
+    text-align:left;
 }
 
-.result h3 {
-    color: #0756c9;
-    margin-bottom: 15px;
+.result h3{
+    color:#0756c9;
+    margin-bottom:15px;
 }
 
-.info {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
+.student-info{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+    margin:15px 0;
 }
 
-.info div {
-    background: white;
-    padding: 12px;
-    border-radius: 8px;
-    border: 1px solid #e5eaf2;
+.info-box{
+    background:white;
+    padding:12px;
+    border-radius:8px;
+    border:1px solid #e3e8f0;
 }
 
-.notice {
-    border-left: 5px solid #0756c9;
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:15px;
+}
+
+th,td{
+    padding:12px 8px;
+    border:1px solid #dce3ed;
+    text-align:center;
+}
+
+th{
+    background:#0756c9;
+    color:white;
+}
+
+.total-row{
+    font-weight:bold;
+    background:#eef5ff;
+}
+
+.summary{
+    margin-top:18px;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:10px;
+}
+
+.summary-box{
+    padding:14px;
+    text-align:center;
+    background:white;
+    border:1px solid #dce3ed;
+    border-radius:10px;
+}
+
+.summary-box strong{
+    display:block;
+    font-size:20px;
+    color:#0756c9;
+    margin-top:5px;
+}
+
+.absent-box{
+    text-align:center;
+    padding:25px 10px;
+    background:#fff4f4;
+    border:1px solid #ffd0d0;
+    border-radius:12px;
+}
+
+.absent-box h2{
+    color:#d62828;
+    margin-bottom:8px;
 }
 
 .notice h2,
-.contact h2 {
-    color: #0756c9;
-    margin-bottom: 10px;
+.contact h2{
+    color:#0756c9;
+    margin-bottom:10px;
 }
 
-.contact p {
-    margin: 8px 0;
+.notice p,
+.contact p{
+    margin:8px 0;
 }
 
-.contact a {
-    color: #0756c9;
-    text-decoration: none;
-    font-weight: bold;
+.contact a{
+    color:#0756c9;
+    font-weight:bold;
+    text-decoration:none;
 }
 
-.footer {
-    background: #101827;
-    color: white;
-    text-align: center;
-    padding: 22px 10px;
-    margin-top: 30px;
+.footer{
+    background:#101827;
+    color:white;
+    text-align:center;
+    padding:22px 10px;
 }
 
-.small {
-    font-size: 13px;
-    opacity: 0.75;
-    margin-top: 7px;
+.small{
+    font-size:13px;
+    opacity:.7;
+    margin-top:7px;
 }
 
-@media (max-width: 600px) {
-    .header h1 {
-        font-size: 22px;
+@media(max-width:600px){
+
+    .header h1{
+        font-size:22px;
     }
 
-    .info {
-        grid-template-columns: 1fr;
+    .student-info{
+        grid-template-columns:1fr;
     }
 
-    .card {
-        padding: 20px;
+    .summary{
+        grid-template-columns:1fr;
+    }
+
+    th,td{
+        font-size:13px;
+        padding:9px 4px;
+    }
+
+    .card{
+        padding:20px;
     }
 }
 
-@media print {
-    body * {
-        visibility: hidden;
+@media print{
+
+    body *{
+        visibility:hidden;
     }
 
     .result,
-    .result * {
-        visibility: visible;
+    .result *{
+        visibility:visible;
     }
 
-    .result {
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-        box-shadow: none;
+    .result{
+        position:absolute;
+        left:0;
+        top:0;
+        width:100%;
+        box-shadow:none;
     }
 }
 </style>
 </head>
 
+
 <body>
 
 <header class="header">
 
-    <img src="logo.png" class="logo" alt="Nanda Sir Coaching Academy Logo">
+<img src="logo.png"
+     class="logo"
+     alt="Nanda Sir Coaching Academy Logo">
 
-    <h1>NANDA SIR COACHING ACADEMY</h1>
-    <p>📍 Dungura</p>
-    <p>📚 Subject: English</p>
-    <p>📞 9583864750</p>
+<h1>NANDA SIR COACHING ACADEMY</h1>
+
+<p>📍 Dungura</p>
+<p>📚 English</p>
+<p>📞 9583864750</p>
 
 </header>
 
+
 <main class="container">
 
-    <section class="card search-card">
+<section class="card search">
 
-        <h2>🎓 Check Your Result</h2>
+<h2>🎓 Check Your Result</h2>
 
-        <p>Enter your Roll Number to view your result</p>
+<p>Enter your Roll Number to view your examination result.</p>
 
-        <input
-            type="text"
-            id="rollInput"
-            placeholder="Enter Roll Number"
-            autocomplete="off"
-        >
+<input
+    type="text"
+    id="rollInput"
+    placeholder="Enter Roll Number"
+    autocomplete="off"
+>
 
-        <br>
+<br>
 
-        <button onclick="checkResult()">View Result</button>
+<button onclick="checkResult()">View Result</button>
 
-        <div id="resultBox" class="result"></div>
+<div id="resultBox" class="result"></div>
 
-    </section>
-
-
-    <section class="card notice">
-
-        <h2>📢 Notice</h2>
-
-        <p>
-            Welcome to Nanda Sir Coaching Academy.
-            Students can check their examination result using their Roll Number.
-        </p>
-
-        <p style="margin-top:10px;">
-            Result will be updated by the academy.
-        </p>
-
-    </section>
+</section>
 
 
-    <section class="card contact">
+<section class="card notice">
 
-        <h2>📞 Contact Academy</h2>
+<h2>📢 Notice</h2>
 
-        <p><strong>Academy:</strong> Nanda Sir Coaching Academy</p>
+<p>
+Welcome to Nanda Sir Coaching Academy.
+Students can check their examination result using their Roll Number.
+</p>
 
-        <p><strong>Location:</strong> Dungura</p>
+<p>
+Result will be published by the Academy.
+</p>
 
-        <p>
-            <strong>Phone:</strong>
-            <a href="tel:9583864750">9583864750</a>
-        </p>
+</section>
 
-    </section>
+
+<section class="card contact">
+
+<h2>📞 Contact Academy</h2>
+
+<p>
+<strong>Academy:</strong>
+Nanda Sir Coaching Academy
+</p>
+
+<p>
+<strong>Location:</strong>
+Dungura
+</p>
+
+<p>
+<strong>Phone:</strong>
+<a href="tel:9583864750">9583864750</a>
+</p>
+
+</section>
 
 </main>
 
 
 <footer class="footer">
 
-    <p>© 2026 Nanda Sir Coaching Academy</p>
+<p>© 2026 Nanda Sir Coaching Academy</p>
 
-    <p class="small">
-        Developed for Academy Result Management
-    </p>
+<p class="small">
+Official Student Result Portal
+</p>
 
 </footer>
 
 
 <script>
 
+/* =========================================
+   STUDENT DATA
+   =========================================
+
+   absent:false = student present
+
+   absent:true = student absent
+
+   objective/subjective blank = result not published
+
+   ========================================= */
+
 const students = {
 
-"4750NS0001": {name:"Anshuman Ghadai", english:""},
-"4750NS0002": {name:"Anusaya Barik", english:""},
-"4750NS0003": {name:"Archita Kar", english:""},
-"4750NS0004": {name:"Arpita Pati", english:""},
-"4750NS0005": {name:"Barsharani Behera", english:""},
-"4750NS0006": {name:"Damayanti Sahoo", english:""},
-"4750NS0007": {name:"Deepa Ghosh", english:""},
-"4750NS0008": {name:"Gayatri Behera", english:""},
-"4750NS0009": {name:"Harapriya Mohanty", english:""},
-"4750NS0010": {name:"Himanshu Parida", english:""},
-"4750NS0011": {name:"Jyotshna Rani Behera", english:""},
-"4750NS0012": {name:"Kshirod Barik", english:""},
-"4750NS0013": {name:"Leeja Sethi", english:""},
-"4750NS0014": {name:"Lisa Rani Kundu", english:""},
-"4750NS0015": {name:"Lipsa Rani Behera", english:""},
-"4750NS0016": {name:"Madhusmita Lenka", english:""},
-"4750NS0017": {name:"Manish Chakrabarty", english:""},
-"4750NS0018": {name:"Omm Prakash Samal", english:""},
-"4750NS0019": {name:"Pratiksha Jena", english:""},
-"4750NS0020": {name:"Rajalaxmi Jena", english:""},
-"4750NS0021": {name:"Rajanandini Sahoo", english:""},
-"4750NS0022": {name:"Saimika Nayak", english:""},
-"4750NS0023": {name:"Sairaj Samal", english:""},
-"4750NS0024": {name:"Subham Mohanty", english:""},
-"4750NS0025": {name:"Subhashree Dutta", english:""},
-"4750NS0026": {name:"Sujata Pradhan", english:""},
-"4750NS0027": {name:"Tapaswini Pradhan", english:""},
-"4750NS0028": {name:"Uma Sankar Panda", english:""}
+"4750NS0001": {
+    name:"Anshuman Ghadal",
+    objective:34,
+    subjective:31,
+    absent:false
+},
+
+"4750NS0002": {
+    name:"Anusaya Barik",
+    objective:"",
+    subjective:"",
+    absent:false
+},
+
+"4750NS0003": {
+    name:"Archita Kar",
+    objective:"",
+    subjective:"",
+    absent:false
+},
+
+"4750NS0004": {
+    name:"Arpita Pati",
+    objective:"",
+    subjective:"",
+    absent:false
+},
+
+"4750NS0005": {
+    name:"Barsharani Behera",
+    objective:"",
+    subjective:"",
+    absent:false
+},
+
+"4750NS0006": {
+    name:"Damayanti Sahoo",
+    objective:"",
+    subjective:"",
+    absent:false
+},
+
+"4750NS0007": {
+    name:"Deepa Ghosh",
+    objective:"",
+    subjective:"",
+    absent:false
+},
+
+"4750NS0008": {
+    name:"Gayatri Behera",
+    objective:"",
+    subjective:"",
+    absent:false
+},
+
+"4750NS0009": {
+    name:"Harapriya Mohanty",
+    objective:"",
+    subjective:"",
+    absent:false
+},
+
+"4750NS0010": {
+    name:"Himanshu Parida",
+    objective:"",
+    subjective:"",
+    absent:false
+},
+
+"4750NS0011": {
+    name:"Jyostna Rani Behera",
+    objective:"",
+    subjective:"",
+    absent:false
+},
+
+"4750NS0012": {
+    name:"Kshirod Barik",
+    objective:"",
+    subjective:"",
+    absent:false
+},
+
+"4750NS0013": {
+    name:"Leeja Sethi",
+    objective:"",
+    subjective:"",
+    absent:false
+},
+
+"4750NS0014": {
+    name:"Lisa Rani Kundu",
+    objective:"",
+    subjective:"",
+    absent:false
+},
+
+"4750NS0015": {
+    name:"Lipsa Rani Behera",
+    objective:"",
+    subjective:"",
+    absent:false
+},
+
+"4750NS0016": {
+    name:"Madhusmita Lenka",
+    objective:"",
+    subjective:"",
+    absent:false
+},
+
+"4750NS0017": {
+    name:"Manish Chakrabarty",
+    objective:"",
+    subjective:"",
+    absent:false
+},
+
+"4750NS0018": {
+    name:"Omm Prakash Samal",
+    objective:"",
+    subjective:"",
+    absent:false
+},
+
+"4750NS0019": {
+    name:"Pratiksha Jena",
+    objective:"",
+    subjective:"",
+    absent:false
+},
+
+"4750NS0020": {
+    name:"Rajalaxmi Jena",
+    objective:"",
+    subjective:"",
+    absent:false
+},
+
+"4750NS0021": {
+    name:"Rajanandini Sahoo",
+    objective:"",
+    subjective:"",
+    absent:false
+},
+
+"4750NS0022": {
+    name:"Saimika Nayak",
+    objective:"",
+    subjective:"",
+    absent:false
+},
+
+"4750NS0023": {
+    name:"Sairaj Samal",
+    objective:"",
+    subjective:"",
+    absent:false
+},
+
+"4750NS0024": {
+    name:"Subham Mohanty",
+    objective:"",
+    subjective:"",
+    absent:false
+},
+
+"4750NS0025": {
+    name:"Subhashree Dutta",
+    objective:"",
+    subjective:"",
+    absent:false
+},
+
+"4750NS0026": {
+    name:"Sujata Pradhan",
+    objective:"",
+    subjective:"",
+    absent:false
+},
+
+"4750NS0027": {
+    name:"Tapaswini Pradhan",
+    objective:"",
+    subjective:"",
+    absent:false
+},
+
+"4750NS0028": {
+    name:"Uma Sankar Panda",
+    objective:"",
+    subjective:"",
+    absent:false
+}
 
 };
 
 
-function checkResult() {
+/* =========================================
+   GRADE SYSTEM
+   ========================================= */
 
-    const roll = document
-        .getElementById("rollInput")
+function getGrade(percentage){
+
+    if(percentage >= 90) return "A1";
+    if(percentage >= 80) return "A2";
+    if(percentage >= 70) return "B1";
+    if(percentage >= 60) return "B2";
+    if(percentage >= 50) return "C1";
+    if(percentage >= 40) return "C2";
+    if(percentage >= 33) return "D";
+
+    return "F";
+}
+
+
+/* =========================================
+   CHECK RESULT
+   ========================================= */
+
+function checkResult(){
+
+    const roll =
+        document.getElementById("rollInput")
         .value
         .trim()
         .toUpperCase();
 
-    const box = document.getElementById("resultBox");
+    const box =
+        document.getElementById("resultBox");
 
-    box.style.display = "block";
+    box.style.display="block";
 
-    if (!roll) {
 
-        box.innerHTML =
-        "<h3>⚠️ Please Enter Roll Number</h3>";
+    /* Empty Roll Number */
 
-        return;
-    }
-
-    const student = students[roll];
-
-    if (!student) {
-
-        box.innerHTML =
-        "<h3>❌ Roll Number Not Found</h3>" +
-        "<p>Please check your Roll Number and try again.</p>";
-
-        return;
-    }
-
-    if (student.english === "") {
+    if(!roll){
 
         box.innerHTML = `
-            <h3>🎓 Student Details</h3>
-
-            <div class="info">
-
-                <div>
-                    <strong>Name</strong><br>
-                    ${student.name}
-                </div>
-
-                <div>
-                    <strong>Roll Number</strong><br>
-                    ${roll}
-                </div>
-
-            </div>
-
-            <p style="margin-top:18px;">
-                📢 <strong>Result Not Published Yet</strong>
-            </p>
+            <h3>⚠️ Please Enter Roll Number</h3>
         `;
 
         return;
     }
 
-    const marks = Number(student.english);
 
-    const result =
-        marks >= 33 ? "PASS" : "FAIL";
+    /* Find Student */
 
-    box.innerHTML = `
-        <h3>🎓 Examination Result</h3>
+    const student = students[roll];
 
-        <div class="info">
 
-            <div>
+    if(!student){
+
+        box.innerHTML = `
+            <h3>❌ Roll Number Not Found</h3>
+            <p>Please check your Roll Number and try again.</p>
+        `;
+
+        return;
+    }
+
+
+    /* =====================================
+       ABSENT STUDENT
+       ===================================== */
+
+    if(student.absent === true){
+
+        box.innerHTML = `
+
+        <h3>🎓 Student Result</h3>
+
+        <div class="student-info">
+
+            <div class="info-box">
                 <strong>Name</strong><br>
                 ${student.name}
             </div>
 
-            <div>
+            <div class="info-box">
                 <strong>Roll Number</strong><br>
                 ${roll}
             </div>
 
-            <div>
-                <strong>English Marks</strong><br>
-                ${marks}
-            </div>
+        </div>
 
-            <div>
-                <strong>Result</strong><br>
-                ${result}
-            </div>
+        <div class="absent-box">
+
+            <h2>ABSENT</h2>
+
+            <p>
+            The student was absent in the examination.
+            </p>
 
         </div>
 
         <button onclick="window.print()">
             🖨️ Print Result
         </button>
+
+        `;
+
+        return;
+    }
+
+
+    /* =====================================
+       RESULT NOT PUBLISHED
+       ===================================== */
+
+    if(student.objective === "" ||
+       student.subjective === ""){
+
+        box.innerHTML = `
+
+        <h3>🎓 Student Details</h3>
+
+        <div class="student-info">
+
+            <div class="info-box">
+                <strong>Name</strong><br>
+                ${student.name}
+            </div>
+
+            <div class="info-box">
+                <strong>Roll Number</strong><br>
+                ${roll}
+            </div>
+
+        </div>
+
+        <p>
+        📢 <strong>Result Not Published Yet</strong>
+        </p>
+
+        `;
+
+        return;
+    }
+
+
+    /* =====================================
+       CALCULATE MARKS
+       ===================================== */
+
+    const objective =
+        Number(student.objective);
+
+    const subjective =
+        Number(student.subjective);
+
+    const total =
+        objective + subjective;
+
+    const percentage =
+        total;
+
+    const grade =
+        getGrade(percentage);
+
+    const status =
+        total >= 33 ? "PASS" : "FAIL";
+
+
+    /* =====================================
+       SHOW RESULT
+       ===================================== */
+
+    box.innerHTML = `
+
+    <h3>🎓 Examination Result</h3>
+
+
+    <div class="student-info">
+
+        <div class="info-box">
+            <strong>Name</strong><br>
+            ${student.name}
+        </div>
+
+        <div class="info-box">
+            <strong>Roll Number</strong><br>
+            ${roll}
+        </div>
+
+    </div>
+
+
+    <table>
+
+        <thead>
+
+            <tr>
+
+                <th>Subject</th>
+
+                <th>Objective</th>
+
+                <th>Subjective</th>
+
+                <th>Total</th>
+
+                <th>Grade</th>
+
+            </tr>
+
+        </thead>
+
+
+        <tbody>
+
+            <tr>
+
+                <td>English</td>
+
+                <td>${objective}</td>
+
+                <td>${subjective}</td>
+
+                <td>${total}</td>
+
+                <td>${grade}</td>
+
+            </tr>
+
+
+            <tr class="total-row">
+
+                <td>Grand Total</td>
+
+                <td>${objective}</td>
+
+                <td>${subjective}</td>
+
+                <td>${total}/100</td>
+
+                <td>${grade}</td>
+
+            </tr>
+
+        </tbody>
+
+    </table>
+
+
+    <div class="summary">
+
+        <div class="summary-box">
+
+            Percentage
+
+            <strong>
+                ${percentage}%
+            </strong>
+
+        </div>
+
+
+        <div class="summary-box">
+
+            Grade
+
+            <strong>
+                ${grade}
+            </strong>
+
+        </div>
+
+
+        <div class="summary-box">
+
+            Result
+
+            <strong>
+                ${status}
+            </strong>
+
+        </div>
+
+    </div>
+
+
+    <button onclick="window.print()">
+        🖨️ Print Result
+    </button>
+
     `;
 }
 
 
+/* =========================================
+   ENTER KEY
+   ========================================= */
+
 document
 .getElementById("rollInput")
-.addEventListener("keypress", function(event) {
+.addEventListener(
+    "keypress",
+    function(event){
 
-    if (event.key === "Enter") {
-        checkResult();
+        if(event.key === "Enter"){
+
+            checkResult();
+
+        }
+
     }
-
-});
+);
 
 </script>
 
